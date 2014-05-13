@@ -5107,6 +5107,14 @@ convert_escape(QueryParse *qp, QueryBuild *qb)
 		CVT_APPEND_DATA(qb, buf, prtlen);
 		retval = QB_append_space_to_separate_identifiers(qb, qp);
 	}
+	else if (stricmp(key, "interval") == 0)
+	{
+		/* Literal; return the escape part adding type cast */
+		F_ExtractOldTo(qp, buf_small, ODBC_ESCAPE_END, sizeof(buf_small));
+		prtlen = snprintf(buf, sizeof(buf), "(interval %s)", buf_small);
+		CVT_APPEND_DATA(qb, buf, prtlen);
+		retval = QB_append_space_to_separate_identifiers(qb, qp);
+	}
 	else if (stricmp(key, "oj") == 0) /* {oj syntax support for 7.1 * servers */
 	{
 		if (qb->stmt)
