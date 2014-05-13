@@ -420,7 +420,7 @@ PGAPI_EnvError(HENV henv,
 			   UWORD flag)
 {
 	EnvironmentClass *env = (EnvironmentClass *) henv;
-	char		*msg;
+	char		*msg = NULL;
 	int		status;
 
 	mylog("**** PGAPI_EnvError: henv=%p <%d>\n", henv, cbErrorMsgMax);
