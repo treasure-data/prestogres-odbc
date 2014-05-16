@@ -5081,29 +5081,52 @@ convert_escape(QueryParse *qp, QueryBuild *qb)
 	{
 		/* Literal; return the escape part adding type cast */
 		F_ExtractOldTo(qp, buf_small, ODBC_ESCAPE_END, sizeof(buf_small));
-		if (PG_VERSION_LT(conn, 7.3))
-			prtlen = snprintf(buf, sizeof(buf), "%s", buf_small);
-		else
-			prtlen = snprintf(buf, sizeof(buf), "%s::date", buf_small);
+		prtlen = snprintf(buf, sizeof(buf), "(date %s)", buf_small);
 		CVT_APPEND_DATA(qb, buf, prtlen);
 		retval = QB_append_space_to_separate_identifiers(qb, qp);
 	}
 	else if (stricmp(key, "t") == 0)
 	{
+		int hour, minute, second, fraction;
+		int nmatch;
 		/* Literal; return the escape part adding type cast */
 		F_ExtractOldTo(qp, buf_small, ODBC_ESCAPE_END, sizeof(buf_small));
-		prtlen = snprintf(buf, sizeof(buf), "%s::time", buf_small);
+		nmatch = sscanf(buf_small, "'%2d:%2d:%2d.%3d'",
+				&hour, &minute, &second, &fraction);
+		if (nmatch < 3) {
+			prtlen = snprintf(buf, sizeof(buf), "(time %s)", buf_small);
+		} else if (nmatch == 3) {
+			prtlen = snprintf(buf, sizeof(buf),
+					"(time '%02d:%02d:%02d')",
+					hour, minute, second);
+		} else {
+			prtlen = snprintf(buf, sizeof(buf),
+					"(time '%02d:%02d:%02d.%03d')",
+					hour, minute, second, fraction);
+		}
+		prtlen = snprintf(buf, sizeof(buf), "(time %s)", buf_small);
 		CVT_APPEND_DATA(qb, buf, prtlen);
 		retval = QB_append_space_to_separate_identifiers(qb, qp);
 	}
 	else if (stricmp(key, "ts") == 0)
 	{
+		int year, month, day, hour, minute, second, fraction;
+		int nmatch;
 		/* Literal; return the escape part adding type cast */
 		F_ExtractOldTo(qp, buf_small, ODBC_ESCAPE_END, sizeof(buf_small));
-		if (PG_VERSION_LT(conn, 7.1))
-			prtlen = snprintf(buf, sizeof(buf), "%s::datetime", buf_small);
-		else
-			prtlen = snprintf(buf, sizeof(buf), "%s::timestamp", buf_small);
+		nmatch = sscanf(buf_small, "'%4d-%2d-%2d %2d:%2d:%2d.%3d'",
+				&year, &month, &day, &hour, &minute, &second, &fraction);
+		if (nmatch < 6) {
+			prtlen = snprintf(buf, sizeof(buf), "(timestamp %s)", buf_small);
+		} else if (nmatch == 6) {
+			prtlen = snprintf(buf, sizeof(buf),
+					"(timestamp '%04d-%02d-%02d %02d:%02d:%02d')",
+					year, month, day, hour, minute, second);
+		} else {
+			prtlen = snprintf(buf, sizeof(buf),
+					"(timestamp '%04d-%02d-%02d %02d:%02d:%02d.%03d')",
+					year, month, day, hour, minute, second, fraction);
+		}
 		CVT_APPEND_DATA(qb, buf, prtlen);
 		retval = QB_append_space_to_separate_identifiers(qb, qp);
 	}
