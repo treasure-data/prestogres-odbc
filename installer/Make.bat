@@ -74,7 +74,7 @@ echo Building psqlODBC installer database...
 candle -nologo -dVERSION=%VERSION% -dSUBLOC=%SUBLOC% -dPRODUCTCODE="%PRODUCTCODE%" psqlodbc.wxs
 IF ERRORLEVEL 1 GOTO ERR_HANDLER
 
-light -nologo -ext WixUIExtension -cultures:en-us psqlodbc.wixobj
+light -nologo -ext WixUIExtension -cultures:en-us psqlodbc.wixobj -out prestogres-odbc.msi
 IF ERRORLEVEL 1 GOTO ERR_HANDLER
 
 echo.
