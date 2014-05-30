@@ -779,6 +779,8 @@ getDSNdefaults(ConnInfo *ci)
 		ci->bytea_as_longvarbinary = DEFAULT_BYTEAASLONGVARBINARY;
 	if (ci->use_server_side_prepare < 0)
 		ci->use_server_side_prepare = DEFAULT_USESERVERSIDEPREPARE;
+	if (ci->rollback_on_error < 0)
+		ci->rollback_on_error = DEFAULT_ROLLBACK_ON_ERROR;
 	if (ci->lower_case_identifier < 0)
 		ci->lower_case_identifier = DEFAULT_LOWERCASEIDENTIFIER;
 	if (ci->gssauth_use_gssapi < 0)
