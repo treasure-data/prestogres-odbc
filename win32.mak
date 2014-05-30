@@ -1,7 +1,7 @@
 #
 # File:			win32.mak
 #
-# Description:		psqlodbc35w Unicode version Makefile for Win32.
+# Description:		prestogres_odbc35w Unicode version Makefile for Win32.
 #
 # Configurations:	Debug, Release
 # Build Types:		ALL, CLEAN
@@ -11,9 +11,9 @@
 #
 
 !IF "$(ANSI_VERSION)" == "yes"
-!MESSAGE Building the PostgreSQL ANSI 3.0 Driver for Win32...
+!MESSAGE Building the Prestogres ANSI 3.0 Driver for Win32...
 !ELSE
-!MESSAGE Building the PostgreSQL Unicode 3.5 Driver for Win32...
+!MESSAGE Building the Prestogres Unicode 3.5 Driver for Win32...
 !ENDIF
 !MESSAGE
 !IF "$(CFG)" == ""
@@ -123,7 +123,7 @@ ADD_DEFINES = $(ADD_DEFINES) /D "_MEMORY_DEBUG_" /GS
 ADD_DEFINES = $(ADD_DEFINES) /GS
 !ENDIF
 !IF "$(ANSI_VERSION)" == "yes"
-ADD_DEFINES = $(ADD_DEFINES) /D "DBMS_NAME=\"PostgreSQL ANSI\"" /D "ODBCVER=0x0350"
+ADD_DEFINES = $(ADD_DEFINES) /D "DBMS_NAME=\"Prestogres ANSI\"" /D "ODBCVER=0x0350"
 !ELSE
 ADD_DEFINES = $(ADD_DEFINES) /D "UNICODE_SUPPORT" /D "ODBCVER=0x0351"
 RSC_DEFINES = $(RSC_DEFINES) /D "UNICODE_SUPPORT"
@@ -147,9 +147,9 @@ NULL=nul
 !ENDIF
 
 !IF "$(ANSI_VERSION)" == "yes"
-MAINLIB = psqlodbc30a
+MAINLIB = prestogres_odbc30a
 !ELSE
-MAINLIB = psqlodbc35w
+MAINLIB = prestogres_odbc35w
 !ENDIF
 MAINDLL = $(MAINLIB).dll
 XALIB = pgxalib

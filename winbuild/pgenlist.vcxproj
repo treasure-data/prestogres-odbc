@@ -75,7 +75,7 @@
   <!-- ANSI_VERSION -->
   <PropertyGroup Condition="'$(ANSI_VERSION)|$(Platform)'=='yes|Win32'">
 	<TargetName>pgenlista</TargetName>
-	<DriverName>psqlodbc30a</DriverName>
+	<DriverName>prestogres_odbc30a</DriverName>
 	<!-- OutDir>$(OutDir)ANSI\</OutDir>
 	<IntDir>$(IntDir)ANSI\pgenlist\</IntDir -->
 	<OutDir>$(srcPath)Multibyte$(Configuration)\</OutDir>
@@ -83,14 +83,14 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(ANSI_VERSION)|$(Platform)'=='no|Win32'">
 	<TargetName>pgenlist</TargetName>
-	<DriverName>psqlodbc35w</DriverName>
+	<DriverName>prestogres_odbc35w</DriverName>
 	<!-- IntDir>$(IntDir)pgenlist\</IntDir -->
 	<OutDir>$(srcPath)$(Configuration)\</OutDir>
 	<IntDir>$(srcPath)$(Configuration)\pgenlist\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(ANSI_VERSION)|$(Platform)'=='yes|x64'">
 	<TargetName>pgenlista</TargetName>
-	<DriverName>psqlodbc30a</DriverName>
+	<DriverName>prestogres_odbc30a</DriverName>
 	<!-- OutDir>$(OutDir)ANSI\</OutDir>
 	<IntDir>$(IntDir)ANSI\pgenlist\</IntDir -->
 	<OutDir>$(srcPath)AMD64ANSI\</OutDir>
@@ -102,7 +102,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(ANSI_VERSION)|$(Platform)'=='no|x64'">
 	<TargetName>pgenlist</TargetName>
-	<DriverName>psqlodbc35w</DriverName>
+	<DriverName>prestogres_odbc35w</DriverName>
 	<!-- IntDir>$(IntDir)pgenlist\</IntDir -->
 	<OutDir>$(srcPath)AMD64\</OutDir>
 	<IntDir>$(srcPath)AMD64\pgenlist\</IntDir>

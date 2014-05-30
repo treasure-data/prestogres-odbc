@@ -71,16 +71,16 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib XOleHlp.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib wsock32.lib ws2_32.lib winmm.lib libpq.lib ssleay32.lib libeay32.lib"
-				OutputFile="psqlodbc35w.dll"
+				OutputFile="prestogres_odbc35w.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="&quot;C:\Program Files\PostgreSQL\9.3\lib\ms&quot;;&quot;C:\OpenSSL\lib\VC&quot;"
 				IgnoreAllDefaultLibraries="false"
 				ModuleDefinitionFile=".\psqlodbc.def"
 				DelayLoadDLLs="libpq.dll;ssleay32.dll;libeay32.dll;secur32.dll;crypt32.dll;XOLEHLP.DLL"
-				ProgramDatabaseFile="psqlodbc35w.pdb"
+				ProgramDatabaseFile="prestogres_odbc35w.pdb"
 				SubSystem="2"
-				ImportLibrary="psqlodbc35w.lib"
+				ImportLibrary="prestogres_odbc35w.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -169,7 +169,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib XOleHlp.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib wsock32.lib ws2_32.lib winmm.lib libpq.lib ssleay32.lib libeay32.lib"
-				OutputFile="psqlodbc35w.dll"
+				OutputFile="prestogres_odbc35w.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="&quot;C:\Program Files\PostgreSQL\9.3\lib\ms&quot;;&quot;C:\OpenSSL\lib\VC&quot;"
@@ -177,9 +177,9 @@
 				ModuleDefinitionFile=".\psqlodbc.def"
 				DelayLoadDLLs="libpq.dll;ssleay32.dll;libeay32.dll;secur32.dll;crypt32.dll;XOLEHLP.DLL"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="psqlodbc35w.pdb"
+				ProgramDatabaseFile="prestogres_odbc35w.pdb"
 				SubSystem="2"
-				ImportLibrary="psqlodbc35w.lib"
+				ImportLibrary="prestogres_odbc35w.lib"
 				TargetMachine="1"
 			/>
 			<Tool

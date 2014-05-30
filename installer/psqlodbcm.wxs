@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
   <Module
-    Id="psqlODBC"
+    Id="PrestogresODBC"
     Version="$(var.VERSION)"
     Language="1033">
 
     <Package
-      Id="ACF10866-5C01-46f0-90F0-D5618638CA48"
-      Description="PostgreSQL ODBC Driver"
-      Keywords="PostgreSQL, ODBC"
-      Manufacturer="PostgreSQL Global Development Group"
+      Id="B377DE98-00A9-41B7-9942-E1F72F87A908"
+      Description="Prestogres ODBC Driver"
+      Keywords="Prestogres, ODBC"
+      Manufacturer="PostgreSQL Global Development Group and Sadayuki Furuhashi"
       InstallerVersion="150"
       Platform="x86"
       Languages="1033"
@@ -19,8 +19,8 @@
       <Directory Id="BINDIR" Name=".">
         <Component Id="psqlodbc.files" Guid="00A1ACE3-B7C2-41b8-A1F1-DB565990DA4E">
           <!-- PostgreSQL -->
-          <File Id="psqlodbc30a.dll" Name="psqlodbc30a.dll" Source="../MultibyteRelease/psqlodbc30a.dll" />
-          <File Id="psqlodbc35w.dll" Name="psqlodbc35w.dll" Source="../Release/psqlodbc35w.dll" />
+          <File Id="prestogres_odbc30a.dll" Name="prestogres_odbc30a.dll" Source="../MultibyteRelease/prestogres_odbc30a.dll" />
+          <File Id="prestogres_odbc35w.dll" Name="prestogres_odbc35w.dll" Source="../Release/prestogres_odbc35w.dll" />
           <File Id="pgxalib.dll" Name="pgxalib.dll" Source="../Release/pgxalib.dll" />
           <File Id="pgenlist.dll" Name="pgenlist.dll" Source="../Release/pgenlist.dll" />
           <File Id="pgenlista.dll" Name="pgenlista.dll" Source="../MultibyteRelease/pgenlista.dll" />
@@ -37,25 +37,25 @@
 
           <!-- Note, installing the driver properly (IE, using ODBCDriver) has proven unreliable -->
           <!--       so we install the registry keys manually ourselves.                         -->
-          <RegistryValue Id="psqlodbc30a.reg.1" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\ODBC Drivers" Name="PostgreSQL ANSI" Type="string" Value="Installed" />
-          <RegistryValue Id="psqlodbc30a.reg.2" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\PostgreSQL ANSI" Name="APILevel" Type="string" Value="1" />
-          <RegistryValue Id="psqlodbc30a.reg.3" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\PostgreSQL ANSI" Name="ConnectFunctions" Type="string" Value="YYN" />
-          <RegistryValue Id="psqlodbc30a.reg.4" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\PostgreSQL ANSI" Name="Driver" Type="string" Value="[#psqlodbc30a.dll]" />
-          <RegistryValue Id="psqlodbc30a.reg.5" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\PostgreSQL ANSI" Name="DriverODBCVer" Type="string" Value="03.00" />
-          <RegistryValue Id="psqlodbc30a.reg.6" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\PostgreSQL ANSI" Name="FileUsage" Type="string" Value="0" />
-          <RegistryValue Id="psqlodbc30a.reg.7" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\PostgreSQL ANSI" Name="Setup" Type="string" Value="[#psqlodbc30a.dll]" />
-          <RegistryValue Id="psqlodbc30a.reg.8" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\PostgreSQL ANSI" Name="SQLLevel" Type="string" Value="1" />
-          <RegistryValue Id="psqlodbc30a.reg.9" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\PostgreSQL ANSI" Name="UsageCount" Type="integer" Value="1" />
+          <RegistryValue Id="prestogres_odbc30a.reg.1" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\ODBC Drivers" Name="Prestogres ANSI" Type="string" Value="Installed" />
+          <RegistryValue Id="prestogres_odbc30a.reg.2" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\Prestogres ANSI" Name="APILevel" Type="string" Value="1" />
+          <RegistryValue Id="prestogres_odbc30a.reg.3" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\Prestogres ANSI" Name="ConnectFunctions" Type="string" Value="YYN" />
+          <RegistryValue Id="prestogres_odbc30a.reg.4" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\Prestogres ANSI" Name="Driver" Type="string" Value="[#prestogres_odbc30a.dll]" />
+          <RegistryValue Id="prestogres_odbc30a.reg.5" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\Prestogres ANSI" Name="DriverODBCVer" Type="string" Value="03.00" />
+          <RegistryValue Id="prestogres_odbc30a.reg.6" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\Prestogres ANSI" Name="FileUsage" Type="string" Value="0" />
+          <RegistryValue Id="prestogres_odbc30a.reg.7" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\Prestogres ANSI" Name="Setup" Type="string" Value="[#prestogres_odbc30a.dll]" />
+          <RegistryValue Id="prestogres_odbc30a.reg.8" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\Prestogres ANSI" Name="SQLLevel" Type="string" Value="1" />
+          <RegistryValue Id="prestogres_odbc30a.reg.9" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\Prestogres ANSI" Name="UsageCount" Type="integer" Value="1" />
 
-          <RegistryValue Id="psqlodbc35w.reg.1" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\ODBC Drivers" Name="PostgreSQL Unicode" Type="string" Value="Installed" />
-          <RegistryValue Id="psqlodbc35w.reg.2" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\PostgreSQL Unicode" Name="APILevel" Type="string" Value="1" />
-          <RegistryValue Id="psqlodbc35w.reg.3" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\PostgreSQL Unicode" Name="ConnectFunctions" Type="string" Value="YYN" />
-          <RegistryValue Id="psqlodbc35w.reg.4" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\PostgreSQL Unicode" Name="Driver" Type="string" Value="[#psqlodbc35w.dll]" />
-          <RegistryValue Id="psqlodbc35w.reg.5" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\PostgreSQL Unicode" Name="DriverODBCVer" Type="string" Value="03.51" />
-          <RegistryValue Id="psqlodbc35w.reg.6" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\PostgreSQL Unicode" Name="FileUsage" Type="string" Value="0" />
-          <RegistryValue Id="psqlodbc35w.reg.7" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\PostgreSQL Unicode" Name="Setup" Type="string" Value="[#psqlodbc35w.dll]" />
-          <RegistryValue Id="psqlodbc35w.reg.8" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\PostgreSQL Unicode" Name="SQLLevel" Type="string" Value="1" />
-          <RegistryValue Id="psqlodbc35w.reg.9" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\PostgreSQL Unicode" Name="UsageCount" Type="integer" Value="1" />
+          <RegistryValue Id="prestogres_odbc35w.reg.1" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\ODBC Drivers" Name="Prestogres Unicode" Type="string" Value="Installed" />
+          <RegistryValue Id="prestogres_odbc35w.reg.2" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\Prestogres Unicode" Name="APILevel" Type="string" Value="1" />
+          <RegistryValue Id="prestogres_odbc35w.reg.3" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\Prestogres Unicode" Name="ConnectFunctions" Type="string" Value="YYN" />
+          <RegistryValue Id="prestogres_odbc35w.reg.4" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\Prestogres Unicode" Name="Driver" Type="string" Value="[#prestogres_odbc35w.dll]" />
+          <RegistryValue Id="prestogres_odbc35w.reg.5" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\Prestogres Unicode" Name="DriverODBCVer" Type="string" Value="03.51" />
+          <RegistryValue Id="prestogres_odbc35w.reg.6" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\Prestogres Unicode" Name="FileUsage" Type="string" Value="0" />
+          <RegistryValue Id="prestogres_odbc35w.reg.7" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\Prestogres Unicode" Name="Setup" Type="string" Value="[#prestogres_odbc35w.dll]" />
+          <RegistryValue Id="prestogres_odbc35w.reg.8" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\Prestogres Unicode" Name="SQLLevel" Type="string" Value="1" />
+          <RegistryValue Id="prestogres_odbc35w.reg.9" Root="HKLM" Key="SOFTWARE\ODBC\ODBCINST.INI\Prestogres Unicode" Name="UsageCount" Type="integer" Value="1" />
         </Component>
       </Directory>
     </Directory>

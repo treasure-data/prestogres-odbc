@@ -1,4 +1,4 @@
-LIBRARY psqlodbc30a
+LIBRARY prestogres_odbc30a
 EXPORTS
 ;SQLAllocConnect @1
 ;SQLAllocEnv @2

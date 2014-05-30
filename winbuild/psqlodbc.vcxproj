@@ -116,20 +116,20 @@
   </PropertyGroup>
   <!-- ANSI_VERSION -->
   <PropertyGroup Condition="'$(ANSI_VERSION)|$(Platform)'=='yes|Win32'" >
-    <TargetName>psqlodbc30a</TargetName>
+    <TargetName>prestogres_odbc30a</TargetName>
     <MAINDEF>$(srcPath)psqlodbca.def</MAINDEF>
     <DTCDLL>pgenlista</DTCDLL>
-    <ADD_DEFINES>$(ADD_DEFINES);ODBCVER=0x0350;DBMS_NAME="PostgreSQL ANSI"</ADD_DEFINES>
+    <ADD_DEFINES>$(ADD_DEFINES);ODBCVER=0x0350;DBMS_NAME="Prestogres ANSI"</ADD_DEFINES>
     <!-- IntDir>$(IntDir)ANSI\</IntDir>
     <OutDir>$(OutDir)ANSI\</OutDir -->
     <IntDir>$(srcPath)Multibyte$(Configuration)\</IntDir>
     <OutDir>$(srcPath)Multibyte$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(ANSI_VERSION)|$(Platform)'=='yes|x64'" >
-    <TargetName>psqlodbc30a</TargetName>
+    <TargetName>prestogres_odbc30a</TargetName>
     <MAINDEF>$(srcPath)psqlodbca.def</MAINDEF>
     <DTCDLL>pgenlista</DTCDLL>
-    <ADD_DEFINES>$(ADD_DEFINES);ODBCVER=0x0350;DBMS_NAME="PostgreSQL ANSI(x64)"</ADD_DEFINES>
+    <ADD_DEFINES>$(ADD_DEFINES);ODBCVER=0x0350;DBMS_NAME="Prestogres ANSI(x64)"</ADD_DEFINES>
     <!-- IntDir>$(IntDir)ANSI\</IntDir>
     <OutDir>$(OutDir)ANSI\</OutDir -->
     <IntDir>$(srcPath)AMD64ANSI\</IntDir>
@@ -140,7 +140,7 @@
     <OutDir>$(srcPath)AMD64ANSI$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(ANSI_VERSION)|$(Platform)'=='no|Win32'" >
-    <TargetName>psqlodbc35w</TargetName>
+    <TargetName>prestogres_odbc35w</TargetName>
     <MAINDEF>$(srcPath)psqlodbc.def</MAINDEF>
     <DTCDLL>pgenlist</DTCDLL>
     <ADD_DEFINES>$(ADD_DEFINES);UNICODE_SUPPORT;ODBCVER=0x0351</ADD_DEFINES>
@@ -149,10 +149,10 @@
     <OutDir>$(srcPath)$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(ANSI_VERSION)|$(Platform)'=='no|x64'" >
-    <TargetName>psqlodbc35w</TargetName>
+    <TargetName>prestogres_odbc35w</TargetName>
     <MAINDEF>$(srcPath)psqlodbc.def</MAINDEF>
     <DTCDLL>pgenlist</DTCDLL>
-    <ADD_DEFINES>$(ADD_DEFINES);UNICODE_SUPPORT;ODBCVER=0x0351;DBMS_NAME="PostgreSQL Unicode(x64)"</ADD_DEFINES>
+    <ADD_DEFINES>$(ADD_DEFINES);UNICODE_SUPPORT;ODBCVER=0x0351;DBMS_NAME="Prestogres Unicode(x64)"</ADD_DEFINES>
     <RSC_DEFINES>$(RSC_DEFINES);UNICODE_SUPPORT</RSC_DEFINES>
     <IntDir>$(srcPath)AMD64\</IntDir>
     <OutDir>$(srcPath)AMD64\</OutDir>

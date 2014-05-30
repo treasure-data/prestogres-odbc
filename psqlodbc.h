@@ -248,7 +248,7 @@ typedef double SDOUBLE;
 
 /* Driver stuff */
 
-#define DRIVERNAME				"PostgreSQL ODBC"
+#define DRIVERNAME				"Prestogres ODBC"
 #if (ODBCVER >= 0x0300)
 #if (ODBCVER >= 0x0351)
 #define DRIVER_ODBC_VER				"03.51"
@@ -257,15 +257,15 @@ typedef double SDOUBLE;
 #endif /* ODBCVER 0x0351 */
 #ifndef DBMS_NAME
 #ifdef	UNICODE_SUPPORT
-#define DBMS_NAME				"PostgreSQL Unicode"
+#define DBMS_NAME				"Prestogres Unicode"
 #else
-#define DBMS_NAME				"PostgreSQL ANSI"
+#define DBMS_NAME				"Prestogres ANSI"
 #endif /* UNICODE_SUPPORT */
 #endif /* DBMS_NAME */
 #else
 #define DRIVER_ODBC_VER				"02.50"
 #ifndef DBMS_NAME
-#define DBMS_NAME				"PostgreSQL Legacy"
+#define DBMS_NAME				"Prestogres Legacy"
 #endif   /* DBMS_NAME */
 #endif   /* ODBCVER */
 
@@ -273,21 +273,21 @@ typedef double SDOUBLE;
 #if (ODBCVER >= 0x0300)
 #ifdef	UNICODE_SUPPORT
 #if (ODBCVER >= 0x0350)
-#define DRIVER_FILE_NAME			"PSQLODBC35W.DLL"
+#define DRIVER_FILE_NAME			"PRESTOGRES_ODBC35W.DLL"
 #else
-#define DRIVER_FILE_NAME			"PSQLODBC30W.DLL"
+#define DRIVER_FILE_NAME			"PRESTOGRES_ODBC30W.DLL"
 #endif /* ODBCVER 0x0350 */
 #else
-#define DRIVER_FILE_NAME			"PSQLODBC.DLL"
+#define DRIVER_FILE_NAME			"PRESTOGRES_ODBC.DLL"
 #endif   /* UNICODE_SUPPORT */
 #else
-#define DRIVER_FILE_NAME			"PSQLODBC25.DLL"
+#define DRIVER_FILE_NAME			"PRESTOGRES_ODBC25.DLL"
 #endif   /* ODBCVER 0x0300 */
 #else
 #ifdef  UNICODE_SUPPORT
-#define DRIVER_FILE_NAME                        "psqlodbcw.so"
+#define DRIVER_FILE_NAME                        "prestogres_odbcw.so"
 #else
-#define DRIVER_FILE_NAME                        "psqlodbca.so"
+#define DRIVER_FILE_NAME                        "prestogres_odbca.so"
 #endif
 #endif   /* WIN32 */
 BOOL isMsAccess(void);

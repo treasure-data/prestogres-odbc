@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 <?ifdef var.Platform ?>
-<?define PKGNAME = "psqlODBC_$(var.Platform)" ?>
+<?define PKGNAME = "PrestogresODBC_$(var.Platform)" ?>
 <?define MERGEM = "$(var.Platform)\psqlodbc_$(var.Platform).msm" ?>
 <?if $(var.Platform) = x64 ?>
 <?define BIT64 = "yes" ?>
 <?define PGFOLDER = "ProgramFiles64Folder" ?>
-<?define PRODID = "3E42F836-9204-4c42-B3C3-8680A0434875" ?>
-<?define CIDREG = "4D361F28-8F75-4c86-9A37-6C279967413D" ?>
-<?define CIDDOC = "0C745A85-4E55-4bab-BBF1-DCF51D92FCC5" ?>
-<?define CIDSMD = "{E6410EE8-96DC-4d84-8D07-94F8093BF3EF}" ?>
-<?define UPGCOD = "BBD29DF5-89F6-4b8b-BDC9-C3EA3A4AFDBB" ?>
+<?define PRODID = "72CC9228-78E4-4C62-9F42-51092E0C886E" ?>
+<?define CIDREG = "5D361F28-8F75-4c86-9A37-6C279967413D" ?>
+<?define CIDDOC = "1C745A85-4E55-4bab-BBF1-DCF51D92FCC5" ?>
+<?define CIDSMD = "{F6410EE8-96DC-4d84-8D07-94F8093BF3EF}" ?>
+<?define UPGCOD = "CBD29DF5-89F6-4b8b-BDC9-C3EA3A4AFDBB" ?>
 <?else?>
 <?define BIT64 = "no" ?>
 <?define PGFOLDER = "ProgramFilesFolder" ?>
-<?define PRODID = "838E187D-8B7A-473d-B93C-C8E970B15D2D" ?>
-<?define CIDREG = "4F0C04EB-ADCB-4fa8-B6A3-E9F74EA693FA" ?>
-<?define CIDDOC = "89DDBC52-9F0D-4846-91DC-09EECC87E430" ?>
-<?define CIDSMD = "{22288E09-B3B6-4181-907F-676099C20127}" ?>
-<?define UPGCOD = "24BCA538-75A2-4a7f-B236-C99EFC2145E0" ?>
+<?define PRODID = "938E187D-8B7A-473d-B93C-C8E970B15D2D" ?>
+<?define CIDREG = "5F0C04EB-ADCB-4fa8-B6A3-E9F74EA693FA" ?>
+<?define CIDDOC = "99DDBC52-9F0D-4846-91DC-09EECC87E430" ?>
+<?define CIDSMD = "{32288E09-B3B6-4181-907F-676099C20127}" ?>
+<?define UPGCOD = "34BCA538-75A2-4a7f-B236-C99EFC2145E0" ?>
 <?endif?>
 <?else?>
 <?define Platform = "x86" ?>
-<?define PKGNAME = "psqlODBC" ?>
+<?define PKGNAME = "PrestogresODBC" ?>
 <?define MERGEM = "psqlodbc.msm" ?>
 <?define BIT64 = "no" ?>
 <?define PGFOLDER = "ProgramFilesFolder" ?>
-<?define PRODID = "838E187D-8B7A-473d-B93C-C8E970B15D2B" ?>
-<?define CIDREG = "4F0C04EB-ADCB-4fa8-B6A3-E9F74EA693F8" ?>
-<?define CIDDOC = "89DDBC52-9F0D-4846-91DC-09EECC87E42E" ?>
-<?define CIDSMD = "{22288E09-B3B6-4181-907F-676099C20125}" ?>
-<?define UPGCOD = "24BCA538-75A2-4a7f-B236-C99EFC2145DE" ?>
+<?define PRODID = "CFAAF24D-A7E6-4D98-BE6F-39F62799F317" ?>
+<?define CIDREG = "5F0C04EB-ADCB-4fa8-B6A3-E9F74EA693F8" ?>
+<?define CIDDOC = "99DDBC52-9F0D-4846-91DC-09EECC87E42E" ?>
+<?define CIDSMD = "{32288E09-B3B6-4181-907F-676099C20125}" ?>
+<?define UPGCOD = "8BC27A15-89AD-4726-81E5-21767FA01710" ?>
 <?endif?>
 
 <!-- Product details -->
 
   <Product
-    Manufacturer="PostgreSQL Global Development Group"
+    Manufacturer="PostgreSQL Global Development Group and Treasure Data, Inc."
     Id="$(var.PRODUCTCODE)"
     UpgradeCode="$(var.UPGCOD)"
     Name="$(var.PKGNAME)"
@@ -48,7 +48,7 @@
     <Package
       Keywords="PostgreSQL, ODBC"
       Comments="PostgreSQL ODBC Driver"
-      Manufacturer="PostgreSQL Global Development Group"
+      Manufacturer="PostgreSQL Global Development Group and Treasure Data, Inc."
       InstallerVersion="300"
       Platform="$(var.Platform)"
       Languages="1033"

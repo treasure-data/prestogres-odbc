@@ -40,9 +40,9 @@ extern "C" {
 
 #if (ODBCVER >= 0x0300)
 #ifdef  UNICODE_SUPPORT
-#define INI_DSN				"PostgreSQL35W"
+#define INI_DSN				"Prestogres35W"
 #else
-#define INI_DSN				"PostgreSQL30"
+#define INI_DSN				"Prestogres30"
 #endif /* UNICODE_SUPPORT */
 #else
 #define INI_DSN				DBMS_NAME

@@ -2,13 +2,13 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 
   <!-- Don't change the UpgradeCode and ProductName -->
-  <?define UpgradeCode = "24BCA538-75A2-4a7f-B236-C99EFC2145DE" ?>
-  <?define ProductName = "psqlODBC" ?>
+  <?define UpgradeCode = "8BC27A15-89AD-4726-81E5-21767FA01710" ?>
+  <?define ProductName = "PrestogresODBC" ?>
 
 <!-- Product details -->
 
   <Product
-    Manufacturer="PostgreSQL Global Development Group"
+    Manufacturer="PostgreSQL Global Development Group and Treasure Data, Inc."
     Id="$(var.PRODUCTCODE)"
     UpgradeCode="$(var.UpgradeCode)"
     Name="$(var.ProductName)"
@@ -18,9 +18,9 @@
 <!-- Package details -->
 
     <Package
-      Keywords="PostgreSQL, ODBC"
-      Comments="PostgreSQL ODBC Driver"
-      Manufacturer="PostgreSQL Global Development Group"
+      Keywords="Prestogres, ODBC"
+      Comments="Prestogres ODBC Driver"
+      Manufacturer="PostgreSQL Global Development Group and Treasure Data, Inc."
       InstallerVersion="300"
       Languages="1033"
       Compressed="yes"
@@ -31,16 +31,16 @@
     <Directory Id="TARGETDIR" Name="SourceDir">
 
       <Directory Id="ProgramFilesFolder" Name="PFiles">
-        <Directory Id="BASEDIR" Name="psqlODBC">
+        <Directory Id="BASEDIR" Name="PrestogresODBC">
           <Directory Id="SUBLOC" Name="$(var.SUBLOC)">
             <Directory Id="BINDIR" Name="bin">
-              <Component Id="registration" Guid="4F0C04EB-ADCB-4fa8-B6A3-E9F74EA693F8">
-                <RegistryValue KeyPath="yes" Type="string" Root="HKLM" Key="Software\psqlODBC" Name="Version" Value="$(var.VERSION)" />
+              <Component Id="registration" Guid="5F0C04EB-ADCB-4fa8-B6A3-E9F74EA693F8">
+                <RegistryValue KeyPath="yes" Type="string" Root="HKLM" Key="Software\PrestogresODBC" Name="Version" Value="$(var.VERSION)" />
               </Component>
               <Merge Id="psqlodbcm" DiskId="1" Language="1033" SourceFile="psqlodbc.msm" />
             </Directory>
             <Directory Id="DOCSDIR" Name="docs">
-              <Component Id="docs" Guid="89DDBC52-9F0D-4846-91DC-09EECC87E42E">
+              <Component Id="docs" Guid="99DDBC52-9F0D-4846-91DC-09EECC87E42E">
                 <File Id="docs.README.txt" Name="README.txt" DiskId="1" Source="../docs/README.txt" KeyPath="yes" />
                 <File Id="docs.config.html" Name="config.html" DiskId="1" Source="../docs/config.html" />
                 <File Id="docs.config_opt.html" Name="config-opt.html" DiskId="1" Source="../docs/config-opt.html" />
@@ -49,16 +49,16 @@
                 <File Id="docs.unix_compilation.html" Name="unix-compilation.html" DiskId="1" Source="../docs/unix-compilation.html" />
                 <File Id="docs.win32_compilation.html" Name="win32-compilation.html" DiskId="1" Source="../docs/win32-compilation.html" />
 
-                <!-- <Shortcut Id="docs.index.html" Directory="SMDir" Name="Documentation index" Description="psqlODBC documentation, HOWTOs and FAQs" Advertise="yes" Show="normal" /> -->
+                <!-- <Shortcut Id="docs.index.html" Directory="SMDir" Name="Documentation index" Description="PrestogresODBC documentation, HOWTOs and FAQs" Advertise="yes" Show="normal" /> -->
               </Component>
             </Directory>
           </Directory>
         </Directory>
       </Directory>
       <Directory Id="ProgramMenuFolder" Name="." SourceName="Programs">
-        <Directory Id="SMDir" Name="psqlODBC">
-            <Component Id="smdir" Guid="{22288E09-B3B6-4181-907F-676099C20125}">
-                <RegistryValue KeyPath="yes" Type="string" Root="HKCU" Key="Software\psqlODBC\SMDir Created" Value="y" />
+        <Directory Id="SMDir" Name="PrestogresODBC">
+            <Component Id="smdir" Guid="{32288E09-B3B6-4181-907F-676099C20125}">
+                <RegistryValue KeyPath="yes" Type="string" Root="HKCU" Key="Software\PrestogresODBC\SMDir Created" Value="y" />
                 <RemoveFolder Id="SMDir" On="uninstall" />
             </Component>
         </Directory>
@@ -67,7 +67,7 @@
 
 <!-- Features -->
 
-    <Feature Id="psqlodbc" Title="psqlODBC" Level="1" Description="psqlODBC - The PostgreSQL ODBC Driver" ConfigurableDirectory="BASEDIR" Display="expand">
+    <Feature Id="prestogresodbc" Title="PrestogresODBC" Level="1" Description="PrestogresODBC - The PostgreSQL ODBC Driver" ConfigurableDirectory="BASEDIR" Display="expand">
       <Feature Id="binaries" Title="ODBC Driver" Level="1" Description="The ODBC driver and supporting libraries.">
         <ComponentRef Id="registration" />
         <MergeRef Id="psqlodbcm" />
@@ -79,7 +79,7 @@
       </Feature>
 
     </Feature>
-    <Media Id="1" EmbedCab="yes" Cabinet="psqlodbc.cab"/>
+    <Media Id="1" EmbedCab="yes" Cabinet="prestogresodbc.cab"/>
 
 <!-- Properties -->
 

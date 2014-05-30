@@ -19,7 +19,7 @@
 /////////////////////////////////////////////////////////////////////////////
 // Japanese resources
 
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+#if 0 && (!defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN))
 #ifdef _WIN32
 LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
 #pragma code_page(932)
@@ -34,9 +34,9 @@ DLG_CONFIG DIALOGEX 65, 43, 359, 219
 STYLE DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | 
     WS_CAPTION | WS_SYSMENU
 #ifdef UNICODE_SUPPORT
-CAPTION "PostgreSQL Unicode ODBC セットアップ"
+CAPTION "Prestogres Unicode ODBC セットアップ"
 #else
-CAPTION "PostgreSQL ANSI ODBC セットアップ"
+CAPTION "Prestogres ANSI ODBC セットアップ"
 #endif
 FONT 9, "ＭＳ ゴシック", 0, 0, 0x1
 BEGIN
@@ -346,27 +346,27 @@ BEGIN
         BLOCK "041104e4"
         BEGIN
 #ifdef UNICODE_SUPPORT
-            VALUE "Comments", "PostgreSQL Unicode ODBC driver Japanese\0"
+            VALUE "Comments", "Prestogres Unicode ODBC driver Japanese\0"
 #else
-            VALUE "Comments", "PostgreSQL ANSI ODBC driver Japanese\0"
+            VALUE "Comments", "Prestogres ANSI ODBC driver Japanese\0"
 #endif
             VALUE "CompanyName", "PostgreSQL Global Development Group\0"
-            VALUE "FileDescription", "PostgreSQL ODBC Driver (Japanese)\0"
+            VALUE "FileDescription", "Prestogres ODBC Driver (Japanese)\0"
             VALUE "FileVersion", POSTGRES_RESOURCE_VERSION
 #ifdef UNICODE_SUPPORT
-            VALUE "InternalName", "psqlodbc35w\0"
+            VALUE "InternalName", "prestogres_odbc35w\0"
 #else
-            VALUE "InternalName", "psqlodbc30a\0"
+            VALUE "InternalName", "prestogres_odbc30a\0"
 #endif
             VALUE "LegalCopyright", "\0"
             VALUE "LegalTrademarks", "ODBC(TM) is a trademark of Microsoft Corporation.  Microsoftョ is a registered trademark of Microsoft Corporation. Windows(TM) is a trademark of Microsoft Corporation.\0"
 #ifdef UNICODE_SUPPORT
-            VALUE "OriginalFilename", "psqlodbc35w.dll\0"
+            VALUE "OriginalFilename", "prestogres_odbc35w.dll\0"
 #else
-            VALUE "OriginalFilename", "psqlodbc30a.dll\0"
+            VALUE "OriginalFilename", "prestogres_odbc30a.dll\0"
 #endif
             VALUE "PrivateBuild", "for Japanese by Hiroshi Inoue & Hiroshi Saito\0"
-            VALUE "ProductName", "PostgreSQL\0"
+            VALUE "ProductName", "Prestogres\0"
             VALUE "ProductVersion", POSTGRES_RESOURCE_VERSION
             VALUE "SpecialBuild", "\0"
         END
@@ -430,9 +430,9 @@ DLG_CONFIG DIALOG DISCARDABLE  65, 43, 305, 142
 STYLE DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | 
     WS_CAPTION | WS_SYSMENU
 #ifdef UNICODE_SUPPORT
-CAPTION "PostgreSQL Unicode ODBC Driver (psqlODBC) Setup"
+CAPTION "Prestogres Unicode ODBC Driver Setup"
 #else
-CAPTION "PostgreSQL ANSI ODBC Driver (psqlODBC) Setup"
+CAPTION "Prestogres ANSI ODBC Driver Setup"
 #endif
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -708,27 +708,27 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
 #ifdef UNICODE_SUPPORT
-            VALUE "Comments", "PostgreSQL Unicode ODBC driver\0"
+            VALUE "Comments", "Prestogres Unicode ODBC driver\0"
 #else
-            VALUE "Comments", "PostgreSQL ANSI ODBC driver\0"
+            VALUE "Comments", "Prestogres ANSI ODBC driver\0"
 #endif
             VALUE "CompanyName", "PostgreSQL Global Development Group\0"
-            VALUE "FileDescription", "PostgreSQL ODBC Driver (English)\0"
+            VALUE "FileDescription", "Prestogres ODBC Driver (English)\0"
             VALUE "FileVersion", POSTGRES_RESOURCE_VERSION
 #ifdef UNICODE_SUPPORT
-            VALUE "InternalName", "psqlodbc35w\0"
+            VALUE "InternalName", "prestogres_odbc35w\0"
 #else
-            VALUE "InternalName", "psqlodbc30a\0"
+            VALUE "InternalName", "prestogres_odbc30a\0"
 #endif
             VALUE "LegalCopyright", "Copyright \0"
             VALUE "LegalTrademarks", "ODBC(TM) is a trademark of Microsoft Corporation.  Microsoft? is a registered trademark of Microsoft Corporation. Windows(TM) is a trademark of Microsoft Corporation.\0"
 #ifdef UNICODE_SUPPORT
-            VALUE "OriginalFilename", "psqlodbc35w.dll\0"
+            VALUE "OriginalFilename", "prestogres_odbc35w.dll\0"
 #else
-            VALUE "OriginalFilename", "psqlodbc30a.dll\0"
+            VALUE "OriginalFilename", "prestogres_odbc30a.dll\0"
 #endif
             VALUE "PrivateBuild", "\0"
-            VALUE "ProductName", "PostgreSQL\0"
+            VALUE "ProductName", "Prestogres\0"
             VALUE "ProductVersion", POSTGRES_RESOURCE_VERSION
             VALUE "SpecialBuild", "\0"
         END

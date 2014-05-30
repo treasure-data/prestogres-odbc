@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 <?ifdef var.Platform ?>
-<?define ModuleName = "psqlODBC_$(var.Platform)" ?>
+<?define ModuleName = "PrestogresODBC_$(var.Platform)" ?>
 <?if $(var.Platform) = x64 ?>
 <?define BIT64 = "yes" ?>
 <?define ANSIFOLDER = "AMD64ANSI" ?>
@@ -12,16 +12,16 @@
 <?define BIT64 = "no" ?>
 <?define ANSIFOLDER = "MultibyteRelease" ?>
 <?define UNICODEFOLDER = "Release" ?>
-<?define Module_PackageId = "ACF10866-5C01-46f0-90F0-D5618638CA4A" ?>
+<?define Module_PackageId = "B377DE98-00A9-41B7-9942-E1F72F87A90A" ?>
 <?define CIDPFILES = "00A1ACE3-B7C2-41b8-A1F1-DB565990DA50" ?>
 <?endif?>
 <?else?>
 <?define BIT64 = "no" ?>
 <?define Platform = "x86" ?>
-<?define ModuleName = "psqlODBC" ?>
+<?define ModuleName = "PrestogresODBC" ?>
 <?define ANSIFOLDER = "MultibyteRelease" ?>
 <?define UNICODEFOLDER = "Release" ?>
-<?define Module_PackageId = "ACF10866-5C01-46f0-90F0-D5618638CA48" ?>
+<?define Module_PackageId = "B377DE98-00A9-41B7-9942-E1F72F87A908" ?>
 <?define CIDPFILES = "00A1ACE3-B7C2-41b8-A1F1-DB565990DA4E" ?>
 <?endif?>
 
@@ -32,9 +32,9 @@
 
     <Package
       Id="$(var.Module_PackageId)"
-      Description="PostgreSQL ODBC Driver"
-      Keywords="PostgreSQL, ODBC"
-      Manufacturer="PostgreSQL Global Development Group"
+      Description="Prestogres ODBC Driver"
+      Keywords="Prestogres, ODBC"
+      Manufacturer="PostgreSQL Global Development Group and Sadayuki Furuhashi"
       InstallerVersion="300"
       Platform="$(var.Platform)"
       Languages="1033"
@@ -45,11 +45,11 @@
         <Component Id="psqlodbc.files" Guid="$(var.CIDPFILES)" Win64="$(var.BIT64)">
 
           <!-- PostgreSQL -->
-          <File Id="psqlodbc30a.dll" Name="psqlodbc30a.dll" Source="../$(var.ANSIFOLDER)/psqlodbc30a.dll">
-	    <ODBCDriver Id="Psqlodbc_9.0_Driver_ANSI" Name="PostgreSQL ANSI($(var.Platform))" />
+          <File Id="prestogres_odbc30a.dll" Name="prestogres_odbc30a.dll" Source="../$(var.ANSIFOLDER)/prestogres_odbc30a.dll">
+	    <ODBCDriver Id="Prestogres_odbc_9.0_Driver_ANSI" Name="Prestogres ANSI($(var.Platform))" />
 	  </File>
-          <File Id="psqlodbc35w.dll" Name="psqlodbc35w.dll" Source="../$(var.UNICODEFOLDER)/psqlodbc35w.dll">
-	    <ODBCDriver Id="Psqlodbc_9.0_Driver" Name="PostgreSQL Unicode($(var.Platform))" />
+          <File Id="prestogres_odbc35w.dll" Name="prestogres_odbc35w.dll" Source="../$(var.UNICODEFOLDER)/prestogres_odbc35w.dll">
+	    <ODBCDriver Id="Prestogres_odbc_9.0_Driver" Name="Prestogres Unicode($(var.Platform))" />
 	  </File>
           <File Id="pgxalib.dll" Name="pgxalib.dll" Source="../$(var.UNICODEFOLDER)/pgxalib.dll" />
           <File Id="pgenlist.dll" Name="pgenlist.dll" Source="../$(var.UNICODEFOLDER)/pgenlist.dll" />

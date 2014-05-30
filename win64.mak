@@ -1,7 +1,7 @@
 #
 # File:			win64.mak
 #
-# Description:		psqlodbc35w Unicode 64bit version Makefile.
+# Description:		prestogres_odbc35w Unicode 64bit version Makefile.
 #			(can be built using platform SDK's buildfarm)
 #
 # Configurations:	Debug, Release
@@ -18,9 +18,9 @@
 !ENDIF
 
 !IF "$(ANSI_VERSION)" == "yes"
-!MESSAGE Building the PostgreSQL ANSI 3.0 Driver for $(CPU)...
+!MESSAGE Building the Prestogres ANSI 3.0 Driver for $(CPU)...
 !ELSE
-!MESSAGE Building the PostgreSQL Unicode 3.5 Driver for $(CPU)...
+!MESSAGE Building the Prestogres Unicode 3.5 Driver for $(CPU)...
 !ENDIF
 !MESSAGE
 !IF "$(CFG)" == ""
@@ -141,9 +141,9 @@ CPUTYPE = x64
 CPUTYPE = $(CPU)
 !ENDIF
 !IF "$(ANSI_VERSION)" == "yes"
-ADD_DEFINES = $(ADD_DEFINES) /D "DBMS_NAME=\"PostgreSQL ANSI($(CPUTYPE))\"" /D "ODBCVER=0x0300"
+ADD_DEFINES = $(ADD_DEFINES) /D "DBMS_NAME=\"Prestogres ANSI($(CPUTYPE))\"" /D "ODBCVER=0x0300"
 !ELSE
-ADD_DEFINES = $(ADD_DEFINES) /D "DBMS_NAME=\"PostgreSQL Unicode($(CPUTYPE))\"" /D "ODBCVER=0x0351" /D "UNICODE_SUPPORT"
+ADD_DEFINES = $(ADD_DEFINES) /D "DBMS_NAME=\"Prestogres Unicode($(CPUTYPE))\"" /D "ODBCVER=0x0351" /D "UNICODE_SUPPORT"
 RSC_DEFINES = $(RSC_DEFINES) /D "UNICODE_SUPPORT"
 !ENDIF
 
@@ -171,9 +171,9 @@ NULL=nul
 !ENDIF
 
 !IF "$(ANSI_VERSION)" == "yes"
-MAINLIB = psqlodbc30a
+MAINLIB = prestogres_odbc30a
 !ELSE
-MAINLIB = psqlodbc35w
+MAINLIB = prestogres_odbc35w
 !ENDIF
 MAINDLL = $(MAINLIB).dll
 XALIB = pgxalib
