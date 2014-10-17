@@ -59,7 +59,7 @@
 
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="$(var.PGFOLDER)" Name="PFiles">
-        <Directory Id="BASEDIR" Name="psqlODBC">
+        <Directory Id="BASEDIR" Name="PrestogresODBC">
           <Directory Id="SUBLOC" Name="$(var.SUBLOC)">
             <Directory Id="BINDIR" Name="bin">
               <Component Id="registration" Guid="$(var.CIDREG)" Win64="$(var.BIT64)">
@@ -94,7 +94,7 @@
 
 <!-- Features -->
 
-    <Feature Id="psqlodbc" Title="$(var.PKGNAME)" Level="1" Description="psqlODBC - The PostgreSQL ODBC Driver" ConfigurableDirectory="BASEDIR" Display="expand">
+    <Feature Id="prestogresodbc" Title="$(var.PKGNAME)" Level="1" Description="PrestogresODBC - The Prestogres ODBC Driver" ConfigurableDirectory="BASEDIR" Display="expand">
       <Feature Id="binaries" Title="ODBC Driver" Level="1" Description="The ODBC driver and supporting libraries.">
         <ComponentRef Id="registration" />
         <MergeRef Id="psqlodbcm" />

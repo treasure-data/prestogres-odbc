@@ -158,7 +158,7 @@ IF ERRORLEVEL 1 GOTO ERR_HANDLER
 
 echo.
 echo Modifying psqlODBC installer database...
-cscript modify_msi.vbs %CPUTYPE%\psqlodbc_%CPUTYPE%.msi
+cscript modify_msi.vbs prestogres-odbc_%CPUTYPE%.msi
 IF ERRORLEVEL 1 GOTO ERR_HANDLER
 
 echo.
