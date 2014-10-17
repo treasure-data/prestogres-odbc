@@ -153,7 +153,7 @@ echo Building psqlODBC installer database...
 IF ERRORLEVEL 1 GOTO ERR_HANDLER
 
 echo Linking psqlODBC installer database...
-%wix_dir%\light -nologo -ext WixUIExtension -cultures:en-us -o %CPUTYPE%\psqlodbc_%CPUTYPE%.msi %CPUTYPE%\psqlodbc.wixobj
+%wix_dir%\light -nologo -ext WixUIExtension -cultures:en-us -o %CPUTYPE%\psqlodbc_%CPUTYPE%.msi %CPUTYPE%\psqlodbc.wixobj -out prestogres-odbc_%CPUTYPE%.msi
 IF ERRORLEVEL 1 GOTO ERR_HANDLER
 
 echo.
