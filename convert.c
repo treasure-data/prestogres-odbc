@@ -68,14 +68,14 @@ CSTR	MINFINITY_STRING = "-Infinity";
 char	   *mapFuncs[][2] = {
 /*	{ "ASCII",		 "ascii"	  }, built_in */
 	{"CHAR", "chr($*)" },
-	{"CONCAT", "textcat($*)" },
+/*	{"CONCAT", "textcat($*)" }, */
 /*	{ "DIFFERENCE", "difference" }, how to ? */
 	{"INSERT", "substring($1 from 1 for $2 - 1) || $4 || substring($1 from $2 + $3)" },
 	{"LCASE", "lower($*)" },
 	{"LEFT", "ltrunc($*)" },
 	{"%2LOCATE", "strpos($2,  $1)" },	/* 2 parameters */
 	{"%3LOCATE", "strpos(substring($2 from $3), $1) + $3 - 1" },	/* 3 parameters */
-	{"LENGTH", "char_length($*)"},
+/*	{"LENGTH", "char_length($*)"}, */
 /*	{ "LTRIM",		 "ltrim"	  }, built_in */
 	{"RIGHT", "rtrunc($*)" },
 	{"SPACE", "repeat('' '', $1)" },
