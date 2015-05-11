@@ -21,7 +21,7 @@ if ($USE_LIBPQ -eq "yes")
 			$pgmfs = "$env:ProgramFiles"
 			$LIBPQBINDIR = "$pgmfs\PostgreSQL\$LIBPQVER\bin"
 		}
-		else if ("${env:ProgramW6432}" -ne "") {
+		elseif ("${env:ProgramW6432}" -ne "") {
 			$pgmfs = "$env:ProgramW6432"
 			$LIBPQBINDIR = "$pgmfs\PostgreSQL\$LIBPQVER\bin"
 		}
@@ -72,22 +72,22 @@ Write-Host "PRODUCTCODE: $PRODUCTCODE"
 try {
 	pushd $scriptPath
 
-	Write-Host ".`nBuilding psqlODBC/$SUBLOC merge module..."
+	Write-Host ".`nBuilding prestogreODBC/$SUBLOC merge module..."
 
 	invoke-expression "candle -nologo -dPlatform=$CPUTYPE `"-dVERSION=$VERSION`" -dSUBLOC=$SUBLOC `"-dLIBPQBINDIR=$LIBPQBINDIR`" `"-dGSSBINDIR=$GSSBINDIR`" -o $CPUTYPE\psqlodbcm.wixobj psqlodbcm_cpu.wxs"
 
-	Write-Host ".`nLinking psqlODBC merge module..."
-	invoke-expression "light -nologo -o $CPUTYPE\psqlodbc_$CPUTYPE.msm $CPUTYPE\psqlodbcm.wixobj"
+	Write-Host ".`nLinking prestogreODBC merge module..."
+	invoke-expression "light -nologo -o $CPUTYPE\prestogres-odbc_$CPUTYPE.msm $CPUTYPE\psqlodbcm.wixobj"
 
-	Write-Host ".`nBuilding psqlODBC installer database..."
+	Write-Host ".`nBuilding prestogreODBC installer database..."
 
 	invoke-expression "candle -nologo -dPlatform=$CPUTYPE `"-dVERSION=$VERSION`" -dSUBLOC=$SUBLOC `"-dPRODUCTCODE=$PRODUCTCODE`" -o $CPUTYPE\psqlodbc.wixobj psqlodbc_cpu.wxs"
 
-	Write-Host ".`nLinking psqlODBC installer database..."
-	invoke-expression "light -nologo -ext WixUIExtension -cultures:en-us -o $CPUTYPE\psqlodbc_$CPUTYPE.msi $CPUTYPE\psqlodbc.wixobj"
+	Write-Host ".`nLinking prestogreODBC installer database..."
+	invoke-expression "light -nologo -ext WixUIExtension -cultures:en-us -o $CPUTYPE\prestogres-odbc_$CPUTYPE.msi $CPUTYPE\psqlodbc.wixobj"
 
-	Write-Host ".`nModifying psqlODBC installer database..."
-	invoke-expression "cscript modify_msi.vbs $CPUTYPE\psqlodbc_$CPUTYPE.msi"
+	Write-Host ".`nModifying prestogreODBC installer database..."
+	invoke-expression "cscript modify_msi.vbs $CPUTYPE\prestogres-odbc_$CPUTYPE.msi"
 
 	Write-Host ".`nDone!"
 }

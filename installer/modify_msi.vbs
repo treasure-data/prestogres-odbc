@@ -26,7 +26,7 @@ Set record = view.Fetch
 Dim gFile, pos
 Do While not record Is Nothing
 gFile = record.StringData(1)
-If Left(gFile, 8) = "psqlodbc" Then
+If Left(gFile, 15) = "prestogres_odbc" Then
 	gFile = record.StringData(3)
 	' Check if the FileName field is ShortName|LongName
 	pos = InStr(record.StringData(3), "|")
